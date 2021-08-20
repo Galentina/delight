@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delight - Main</title>
+</head>
+<body>
+	<nav>
+		<div class="container nav_header">
+			<a href="#" class="logo">
+				<img src="img/logo.svg" alt="Logo">
+			</a>
+
+			<!-- Что бы показать скрытый элемент нужно убрать у элемента класс hidden -->
+			<a id="addGadgetLink" href="add-gadget.html" class="btn-red hidden">Add gadget</a>
+
+			<div id="profile" class="profile hidden">
+				<img src="img/icon/avatar.jpg" class="profile_photo" alt="">
+				<p id="profileName" class="profile_name">Ivan Pasikun</p>
+			</div>
+
+			<!-- <a href="#" class="cart_block">
+				<img src="img/icon/cart.svg" alt="Cart icon">
+			</a> -->
+
+			<button id="loginBtn" class="btn-blue">Enter</button>
+			<button id="logoutBtn" class="btn-blue" style="display: none;">Exit</button>
+		</div>
+		<hr>
+		<div class="container nav_bottom">
+			<ul class="nav_list">
+				<li><a href="#">Popular</a></li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Сlocks</a></li>
+				<li><a href="#">Smart speakers</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main>
+		<section class="container popular_section">
+			<h2>Popular goods</h2>
+
+			<div id="cards" class="items-cards_layout">
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350a" class="item_card">
+					<img src="img/item-image-01.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350b" class="item_card">
+					<img src="img/item-image-02.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350c" class="item_card">
+					<img src="img/item-image-03.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350d" class="item_card">
+					<img src="img/item-image-04.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350e" class="item_card">
+					<img src="img/item-image-01.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350f" class="item_card">
+					<img src="img/item-image-02.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350g" class="item_card">
+					<img src="img/item-image-03.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="gadget-page.html?hash=92c02667-a84d-4452-a782-dbd298ce350h" class="item_card">
+					<img src="img/item-image-04.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+			</div>
+		</section>
+		<section class="container brand_section">
+			<h2>Brands</h2>
+			<div class="items-cards_layout">
+				<a href="#" class="brand_card">
+					<img src="img/preloader.svg" alt="">
+				</a>
+				<a href="#" class="brand_card">
+					<img src="img/preloader.svg" alt="">
+				</a>
+				<a href="#" class="brand_card">
+					<img src="img/preloader.svg" alt="">
+				</a>
+				<a href="#" class="brand_card">
+					<img src="img/preloader.svg" alt="">
+				</a>
+			</div>
+		</section>
+		<section class="container recently-viewed_section">
+			<h2>Recently viewed</h2>
+			<div class="items-cards_layout">
+				<a href="#" class="item_card">
+					<img src="img/item-image-01.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="#" class="item_card">
+					<img src="img/item-image-02.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="#" class="item_card">
+					<img src="img/item-image-03.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+				<a href="#" class="item_card">
+					<img src="img/item-image-04.png" class="card_cover" alt="Item image">
+
+					<p class="item_category">Smart speaker</p>
+					<p class="item_name">Apple HomePod</p>
+					<p class="item_price">350&nbsp;&#8364;</p>
+
+					<p class="item_comments"><span>5</span>reviews</p>
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container footer_header">
+			<div class="short-info_block">
+
+				<a href="#" class="logo">
+					<img src="img/logo.svg" alt="">
+				</a>
+
+				<a class="contacts_link" href="mailto:delight@delight.nl">delight@delight.nl</a>
+				<a class="contacts_link" href="tel:+ 310 44 333 6666">+ 310 44 333 6666</a>
+
+
+				<div class="social-media_block">
+					<a href="#">
+						<img src="img/icon/instagram-logo.svg" alt="Instagram logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/facebook-logo.svg" alt="Facebook logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/twitter-logo.svg" alt="Twitter logo">
+					</a>
+				</div>
+			</div>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">For clients</li>
+				<li><a href="#">Help with choosing</a></li>
+				<li><a href="#">Expertise</a></li>
+				<li><a href="#">Reviews</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Catalog</li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Clocks</a></li>
+				<li><a href="#">Smart speaker</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Help</li>
+				<li><a href="#">Bonus cards</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Shipping</a></li>
+				<li><a href="#">Payment</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Delight</li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">Working here</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</div>
+		<hr>
+		<div class="container footer_footer">
+			<p>2021 © Delight. All rights reserved</p>
+		</div>
+	</footer>
+
+	<!--
+		Что бы показать попап требуется:
+			- блоку popup_back добавить класс visible
+			- нужному попапу добавить класс popup-show
+	-->
+
+	<div id="overlay" class="popup_back"></div>
+
+	<div id="loginForm" class="popup_form popup_login">
+
+		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+
+		<div class="tab_section">
+			<div class="tab_navigation">
+				<ul>
+					<li id="regLink">Registration</li>
+					<li id="loginLink" class="active">Login</li>
+				</ul>
+			</div>
+			<div id="loginPane" class="tab_pane show">
+				<form action="" method="">
+					<fieldset>
+						<label for="signInEmail">E-mail</label>
+						<input name="email" type="email" id="signInEmail" placeholder="E-mail">
+					</fieldset>
+					<fieldset>
+						<label for="signInPassword">Password</label>
+						<input name="password" type="password" id="signInPassword" placeholder="Password">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+			</div>
+
+			<div id="regPane" class="tab_pane">
+				<form action="" method="">
+					<fieldset>
+						<label for="username">Name</label>
+						<input name="name" type="text" id="username" placeholder="username">
+					</fieldset>
+					<fieldset>
+						<label for="signUpEmail">E-mail</label>
+						<input name="email" type="email" id="signUpEmail" placeholder="E-mail">
+					</fieldset>
+					<fieldset>
+						<label for="signUpPassword">Password</label>
+						<input name="password" type="password" id="signUpPassword" placeholder="Password">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

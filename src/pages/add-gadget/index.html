@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delight - Add gadget</title>
+</head>
+<body>
+	<nav>
+		<div class="container nav_header">
+			<a href="index.html" class="logo">
+				<img src="img/logo.svg" alt="Logo">
+			</a>
+
+			<div class="profile">
+				<img src="img/icon/avatar.jpg" class="profile_photo" alt="">
+				<p id="profileName" class="profile_name">Max Petrov</p>
+			</div>
+
+			<a href="#" class="cart_block hidden">
+				<img src="img/icon/cart.svg" alt="Cart icon">
+			</a>
+
+			<button id="loginBtn" class="btn-blue">Enter</button>
+			<button id="logoutBtn" class="btn-blue" style="display: none;">Exit</button>
+		</div>
+		<hr>
+		<div class="container nav_bottom">
+			<ul class="nav_list">
+				<li><a href="#">Popular</a></li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Сlocks</a></li>
+				<li><a href="#">Smart speakers</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main>
+		<section class="add-characteristic container">
+			<form id="form" action="" method="">
+				<div class="input-group">
+					<label for="naming">Name</label>
+					<input name="naming" type="text" id="naming" placeholder="Наименование">
+
+					<label for="price">Price</label>
+					<input name="price" type="cost" id="price" placeholder="Стоимость">
+				</div>
+
+				<div class="file-attachment">
+					<input type="file" id="file">
+
+					<div>
+						<img src="img/icon/plus.svg" alt="Plus">
+						<label for="file">Add image</label>
+					</div>
+				</div>
+
+				<!-- <table>
+				  <caption>Основные характиристики</caption>
+					<tr>
+						<td>Память</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="memory" type="text">
+
+								<div class="control_add">
+									<img src="img/icon/plus.svg" alt="">
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Цвет</td>
+						<td>
+
+							<div class="input-group_wrap">
+								<input name="color" type="text">
+
+								<div class="control_add">
+									<img src="img/icon/plus.svg" alt="">
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table> -->
+				<table>
+				  <caption>Basic specifications</caption>
+					<tr>
+						<td>Memory</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="memory" type="text">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Colour</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="color" type="text">
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table>
+				  <caption>Computation power</caption>
+					<tr>
+						<td>Processor</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="processor" type="text">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Graphics</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="graphics" type="text">
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table>
+				  <caption>Display</caption>
+					<tr>
+						<td>Brightness</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="brightness" type="text">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Contrast</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="contrast" type="text">
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table>
+				  <caption>Camera</caption>
+					<tr>
+						<td>Matrix resolution</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="matrix" type="text">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Number of cameras</td>
+						<td>
+							<div class="input-group_wrap">
+								<input name="cameras" type="text">
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<input type="submit" value="Сохранить" class="btn-blue">
+			</form>
+
+			<hr>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container footer_header">
+			<div class="short-info_block">
+
+				<a href="#" class="logo">
+					<img src="img/logo.svg" alt="">
+				</a>
+
+				<a class="contacts_link" href="mailto:delight@delight.nl">delight@delight.nl</a>
+				<a class="contacts_link" href="tel:+ 310 44 333 6666">+ 310 44 333 6666</a>
+
+
+				<div class="social-media_block">
+					<a href="#">
+						<img src="img/icon/instagram-logo.svg" alt="Instagram logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/facebook-logo.svg" alt="Facebook logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/twitter-logo.svg" alt="Twitter logo">
+					</a>
+				</div>
+			</div>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">For clients</li>
+				<li><a href="#">Help with choosing</a></li>
+				<li><a href="#">Expertise</a></li>
+				<li><a href="#">Reviews</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Catalog</li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Clocks</a></li>
+				<li><a href="#">Smart speaker</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Help</li>
+				<li><a href="#">Bonus cards</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Shipping</a></li>
+				<li><a href="#">Payment</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Delight</li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">Working here</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</div>
+		<hr>
+		<div class="container footer_footer">
+			<p>2021 © Delight. All rights reserved</p>
+		</div>
+	</footer>
+
+	<!--
+		Что бы показать попап требуется:
+			- блоку popup_back добавить класс visible
+			- нужному попапу добавить класс popup-show
+	-->
+
+	<div class="popup_back "></div>
+
+	<div class="popup_form popup_login ">
+
+		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+
+		<div class="tab_section">
+			<div class="tab_navigation">
+				<ul>
+					<li>Registration</li>
+					<li class="active">Login</li>
+				</ul>
+			</div>
+			<div class="tab_pane show">
+				<form action="" method="">
+					<fieldset>
+						<label for="signInEmail">E-mail</label>
+						<input type="email" id="signInEmail" placeholder="example@gmail.com">
+					</fieldset>
+					<fieldset>
+						<label for="signInPassword">Password</label>
+						<input type="password" id="signInPassword" placeholder="secret password">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+			</div>
+
+			<div class="tab_pane">
+				<form action="" method="">
+					<fieldset>
+						<label for="username">Name</label>
+						<input type="text" id="username" placeholder="username">
+					</fieldset>
+					<fieldset>
+						<label for="signUpEmail">E-mail</label>
+						<input type="email" id="signUpEmail" placeholder="example@gmail.com">
+					</fieldset>
+					<fieldset>
+						<label for="signUpPassword">Password</label>
+						<input type="password" id="signUpPassword" placeholder="secret password">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="popup_form popup_cart">
+		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+
+		<h2>Basket</h2>
+		<div class="receipt_list">
+			<div class="cart_item">
+				<p class="item_name">Apple HomePod</p>
+				<p class="item_price">&#8364;&nbsp;250</p>
+				<input type="text" class="item_count" value="2">
+
+				<div class="control-remove">
+					<img src="img/icon/plus.svg" alt="">
+				</div>
+
+			</div>
+			<div class="cart_item">
+				<p class="item_name">Apple HomePod</p>
+				<p class="item_price">&#8364;&nbsp;250</p>
+				<input type="text" class="item_count" value="2">
+
+				<div class="control-remove">
+					<img src="img/icon/plus.svg" alt="">
+				</div>
+
+			</div>
+		</div>
+		<div class="total-cost_block">
+			<p class="total-cost_label">Total cost:</p>
+
+			<p class="total-cost_cost">&#8364;&nbsp;850</p>
+		</div>
+		<a href="#" class="btn-blue">Checkout</a>
+	</div>
+</body>
+</html>

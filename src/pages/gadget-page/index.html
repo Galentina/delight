@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Delight - Gadget</title>
+</head>
+<body>
+	<nav>
+		<div class="container nav_header">
+			<a href="index.html" class="logo">
+				<img src="img/logo.svg" alt="Logo">
+			</a>
+
+			<!-- Что бы показать скрытый элемент нужно убрать у элемента класс selected -->
+			<a href="#" class="btn-red hidden">Add gadget</a>
+
+			<div id="profile" class="profile hidden">
+				<img src="img/icon/avatar.jpg" class="profile_photo" alt="">
+				<p id="profileName" class="profile_name">Ivan Pasikun</p>
+			</div>
+
+			<a id="cartIcon" href="#" class="cart_block">
+				<img src="img/icon/cart.svg" alt="Cart icon">
+			</a>
+
+			<button id="loginBtn" class="btn-blue">Enter</button>
+			<button id="logoutBtn" class="btn-blue" style="display: none;">Exit</button>
+		</div>
+		<hr>
+		<div class="container nav_bottom">
+			<ul class="nav_list">
+				<li><a href="#">Popular</a></li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Сlocks</a></li>
+				<li><a href="#">Smart speakers</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main>
+		<section class="product-info_section container">
+			<div class="gadget_title">
+				<h1 id="name">Apple iPhone 8 Plus 128 GB</h1>
+				<button id="editButton" class="btn-red hidden">Edit</button>
+
+			</div>
+			<div class="short_description">
+				<div class="product_image">
+					<img src="img/product-img.png" alt="Product img">
+				</div>
+				<div class="product_characteristic">
+
+					<div class="data-item">
+						<p class="item-legend">Colour</p>
+
+						<div class="item-value">
+							<!-- Что бы показать выбранный элемент нужно добавить элементу класс selected -->
+							<div class="circle selected">
+								<div class="color" style="background-color: #F9E3CC;"></div>
+							</div>
+							<div class="circle selected">
+								<div class="color" style="background-color: #3A3A3A;"></div>
+							</div>
+							<div class="circle ">
+								<div class="color" style="background-color: #FDBDBA;"></div>
+							</div>
+							<div class="circle ">
+								<div class="color" style="background-color: #EEEFF1;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="data-item">
+						<p class="item-legend">Memory</p>
+
+						<div class="item-value">
+							<!-- Что бы показать выбранный элемент нужно добавить элементу класс selected -->
+							<div class="param">
+								<p>64 GB</p>
+							</div>
+							<div class="param selected">
+								<p>128 GB</p>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="price_block">
+						<p id="price" class="price">835 &nbsp;&#8364;</p>
+						<p class="availability">In stock</p>
+
+						<button>Add to Basket</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container">
+			<!--
+				Для работы переключателя требуется:
+					- в блоке tab_navigation нужному li из списка  добавить класс active
+					- блоку tab_pane добавить класс show
+			-->
+			<div class="tab_section">
+				<div class="tab_navigation">
+					<ul id="tabs">
+						<li id="characteristics" class="active">Specifications</li>
+						<li id="reviews">Reviews</li>
+					</ul>
+				</div>
+				<div id="characteristicsPane" class="tab_pane show">
+					<table>
+					  <caption>Basic specifications</caption>
+						<tr>
+							<td>Memory</td>
+							<td id="memory">128 GB</td>
+						</tr>
+						<tr>
+							<td>Colour</td>
+							<td id="">Black</td>
+						</tr>
+					</table>
+					<table>
+					  <caption>Computation power</caption>
+						<tr>
+							<td>Processor</td>
+							<td id="processor">A11 Bionic</td>
+						</tr>
+						<tr>
+							<td>Графика</td>
+							<td id="graphics">A11 Bionic</td>
+						</tr>
+					</table>
+					<table>
+					  <caption>Display</caption>
+						<tr>
+							<td>Brightness</td>
+							<td id="brightness">625 kd/м²</td>
+						</tr>
+						<tr>
+							<td>Contrast</td>
+							<td id="contrast">1400:1</td>
+						</tr>
+					</table>
+					<table>
+					  <caption>Camera</caption>
+						<tr>
+							<td>Matrix resolution</td>
+							<td id="matrix">12 Mp</td>
+						</tr>
+						<tr>
+							<td>Number of cameras</td>
+							<td id="cameras">2</td>
+						</tr>
+					</table>
+				</div>
+				<div id="reviewsPane" class="tab_pane">
+					<div class="feedback_layout">
+						<div class="feedback_list">
+							<h2><span>2</span>&nbsp;<span>Reviews</span></h2>
+							<div id="userReviews">
+								<article>
+									<p class="name">Sergey Ivanov<img src="img/icon/close-red.svg" class="close-icon" alt="Close icon"></p>
+									<div class="feedback_info pros">
+										<p class="feedback_title">Advantages</p>
+										<p class="feedback_content">The speed of work. Convenience. Very convenient system of 100% transfer of data from the past iPhone.
+											I was very pleased with the headphones.</p>
+									</div>
+									<div class="feedback_info cons">
+										<p class="feedback_title">Disadvantages</p>
+										<p class="feedback_content">The phone is heavy ... ie. by itself is still normal, but if in a case, then it's hard (I decided for myself in the first
+											week or two to walk around cleanly with a protective rear glass). that the back glass is scratched quickly.</p>
+									</div>
+								</article>
+
+								<article>
+									<p class="name">Peter Sergeev<img src="img/icon/close-red.svg" class="close-icon" alt="Close icon"></p>
+
+									<div class="feedback_info pros">
+										<p class="feedback_title">Advantages</p>
+										<p class="feedback_content">Super camera. After the past, the difference is very noticeable. The speed of work is approx. In addition,
+											the charge is retained better, the sound is louder and the network catches almost everywhere</p>
+									</div>
+									<div class="feedback_info cons">
+										<p class="feedback_title">Disadvantages</p>
+										<p class="feedback_content">After it turned off by itself, then it hung so hard that I could not even turn it off.
+											A couple of minutes later it woke up. Hope this was due to the new firmware. :-(</p>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="feedback_form">
+							<h2>Leave your review</h2>
+
+							<form action="" method="">
+								<input type="text" name="name" placeholder="Name">
+								<textarea name="pros" placeholder="Advantages"></textarea>
+								<textarea name="cons" placeholder="Disadvantages"></textarea>
+
+								<input type="submit" class="btn-blue" value="Добавить отзыв">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container footer_header">
+			<div class="short-info_block">
+
+				<a href="#" class="logo">
+					<img src="img/logo.svg" alt="">
+				</a>
+
+				<a class="contacts_link" href="mailto:delight@delight.nl">delight@delight.nl</a>
+				<a class="contacts_link" href="tel:+ 310 44 333 6666">+ 310 44 333 6666</a>
+
+
+				<div class="social-media_block">
+					<a href="#">
+						<img src="img/icon/instagram-logo.svg" alt="Instagram logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/facebook-logo.svg" alt="Facebook logo">
+					</a>
+					<a href="#">
+						<img src="img/icon/twitter-logo.svg" alt="Twitter logo">
+					</a>
+				</div>
+			</div>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">For clients</li>
+				<li><a href="#">Help with choosing</a></li>
+				<li><a href="#">Expertise</a></li>
+				<li><a href="#">Reviews</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Catalog</li>
+				<li><a href="#">Mobile Phones</a></li>
+				<li><a href="#">Clocks</a></li>
+				<li><a href="#">Smart speaker</a></li>
+				<li><a href="#">Headphones</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Help</li>
+				<li><a href="#">Bonus cards</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Shipping</a></li>
+				<li><a href="#">Payment</a></li>
+			</ul>
+
+			<ul class="footer_nav_list">
+				<li class="list-title">Delight</li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">Working here</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</div>
+		<hr>
+		<div class="container footer_footer">
+			<p>2021 © Delight. All rights reserved</p>
+		</div>
+	</footer>
+
+	<!--
+		Что бы показать попап требуется:
+			- блоку popup_back добавить класс visible
+			- нужному попапу добавить класс popup-show
+	-->
+
+	<div class="popup_back"></div>
+
+	<div class="popup_form popup_login ">
+
+		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+
+		<div class="tab_section">
+			<div class="tab_navigation">
+				<ul>
+					<li>Registration</li>
+					<li class="active">Login</li>
+				</ul>
+			</div>
+			<div class="tab_pane show">
+				<form action="" method="">
+					<fieldset>
+						<label for="signInEmail">E-mail</label>
+						<input type="email" id="signInEmail" placeholder="example@gmail.com">
+					</fieldset>
+					<fieldset>
+						<label for="signInPassword">Password</label>
+						<input type="password" id="signInPassword" placeholder="secretpassword">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+			</div>
+
+			<div class="tab_pane">
+				<form action="" method="">
+					<fieldset>
+						<label for="username">Name</label>
+						<input type="text" id="username" placeholder="username">
+					</fieldset>
+					<fieldset>
+						<label for="signUpEmail">E-mail</label>
+						<input type="email" id="signUpEmail" placeholder="example@gmail.com">
+					</fieldset>
+					<fieldset>
+						<label for="signUpPassword">Password</label>
+						<input type="password" id="signUpPassword" placeholder="secretpassword">
+					</fieldset>
+
+					<input type="submit" class="btn-blue">
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="popup_form popup_cart">
+		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+
+		<h2>Корзина</h2>
+		<div class="receipt_list">
+			<div class="cart_item">
+				<p class="item_name">Apple HomePod</p>
+				<p class="item_price">&#8364; 250</p>
+				<input type="text" class="item_count" value="2">
+
+				<div class="control-remove">
+					<img src="img/icon/plus.svg" alt="">
+				</div>
+
+			</div>
+			<div class="cart_item">
+				<p class="item_name">Apple HomePod</p>
+				<p class="item_price">&#8364; 250</p>
+				<input type="text" class="item_count" value="2">
+
+				<div class="control-remove">
+					<img src="img/icon/plus.svg" alt="">
+				</div>
+
+			</div>
+		</div>
+		<div class="total-cost_block">
+			<p class="total-cost_label">Total cost:</p>
+
+			<p class="total-cost_cost">$<span id="total">850</span></p>
+		</div>
+		<a href="#" class="btn-blue">Checkout</a>
+	</div>
+</body>
+</html>
