@@ -1,7 +1,14 @@
 import '../../../css/index.css';
 import '../../../css/style.css';
+import { ISubmitEvent } from '../../types/types';
+
+// eslint-disable-next-line import/named
+import { login, registration } from '../../forms/register_login';
+import { adminProfile, gadgetLink } from '../../forms/elements';
+
 
 const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
 const overlay = document.getElementById('overlay');
 const loginForm = document.getElementById('loginForm');
 const regLink = document.getElementById('regLink');
@@ -9,6 +16,8 @@ const loginLink = document.getElementById('loginLink');
 const regPane = document.getElementById('regPane');
 const loginPane = document.getElementById('loginPane');
 const closeImg = loginForm?.querySelector('img');
+// const mobiles = document.getElementById('mobiles');
+
 
 // eslint-disable-next-line max-len
 if (!loginForm || !closeImg || !overlay || !loginBtn || !regLink || !loginLink || !regPane || !loginPane) {
@@ -35,6 +44,15 @@ loginBtn.onclick = () => {
     loginForm.classList.add('popup-show');
 };
 
+if (logoutBtn) {
+    logoutBtn.onclick = () => {
+        loginBtn.style.display = 'inherit';
+        logoutBtn.style.display = 'none';
+        if (gadgetLink) gadgetLink.className = 'btn-red hidden';
+        if (adminProfile) adminProfile.className = 'profile hidden';
+    };
+}
+
 regLink.onclick = () => {
     resetFormLinks();
 
@@ -54,5 +72,30 @@ loginLink.onclick = () => {
 closeImg.onclick = () => {
     overlay.classList.remove('visible');
     loginForm.classList.remove('popup-show');
+};
+
+
+const registerForm = <HTMLFormElement>regPane?.querySelector('form');
+registerForm.onsubmit = (event) => {
+    event.preventDefault();
+    const submitEvent = event as unknown as ISubmitEvent;
+    const formData = new FormData(submitEvent.target);
+    registration(formData);
+    closePopUp();
+};
+
+const loginInForm = <HTMLFormElement>loginPane?.querySelector('form');
+loginInForm.onsubmit = (event) => {
+    event.preventDefault();
+    const submitEvent = event as unknown as ISubmitEvent;
+    const formData = new FormData(submitEvent.target);
+    login(formData);
+
+    closePopUp();
+
+    if (gadgetLink) gadgetLink.className = 'btn-red';
+    if (adminProfile) adminProfile.className = 'profile';
+    loginBtn.style.display = 'none';
+    if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
 };
 
