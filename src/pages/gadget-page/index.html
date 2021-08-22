@@ -17,7 +17,7 @@
 
 			<div id="profile" class="profile hidden">
 				<img src="img/icon/avatar.jpg" class="profile_photo" alt="">
-				<p id="profileName" class="profile_name">Ivan Pasikun</p>
+				<p id="profileName" class="profile_name">User</p>
 			</div>
 
 			<a id="cartIcon" href="#" class="cart_block">
@@ -40,7 +40,7 @@
 	</nav>
 
 	<main>
-		<section class="product-info_section container">
+		<section id="prodInfo" class="product-info_section container">
 			<div class="gadget_title">
 				<h1 id="name">Apple iPhone 8 Plus 128 GB</h1>
 				<button id="editButton" class="btn-red hidden">Edit</button>
@@ -74,13 +74,13 @@
 					<div class="data-item">
 						<p class="item-legend">Memory</p>
 
-						<div class="item-value">
+						<div id="mem" class="item-value">
 							<!-- Что бы показать выбранный элемент нужно добавить элементу класс selected -->
-							<div class="param">
-								<p>64 GB</p>
+							<div id="mem64" class="param">
+								<p >64 GB</p>
 							</div>
-							<div class="param selected">
-								<p>128 GB</p>
+							<div id="mem128" class="param selected">
+								<p >128 GB</p>
 							</div>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 						<p id="price" class="price">835 &nbsp;&#8364;</p>
 						<p class="availability">In stock</p>
 
-						<button>Add to Basket</button>
+						<button id="basked" style="cursor: pointer">Add to Basket</button>
 					</div>
 				</div>
 			</div>
@@ -119,7 +119,7 @@
 						</tr>
 						<tr>
 							<td>Colour</td>
-							<td id="">Black</td>
+							<td id="color">Black</td>
 						</tr>
 					</table>
 					<table>

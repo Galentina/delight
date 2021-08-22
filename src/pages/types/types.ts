@@ -56,10 +56,10 @@ export interface IGetProduct {
     'hash': string,
     'name': string,
     'characteristics': {
+        'memory'?: number,
         'colors': [
             string,
         ],
-        'memory': number,
         'processor': string,
         'graphics': number,
         'brightness': number,

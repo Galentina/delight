@@ -3,7 +3,6 @@ import {
     IGetProduct,
     ILogin, IRegister, IRegistrationToken,
 } from '../types/types';
-// import { storage } from './storage';
 
 
 const API_URL = 'https://lab.lectrum.io/js2/api/zavidovo';
@@ -27,15 +26,19 @@ export const api = Object.freeze({
 
     profile: async (token: string) => {
         const { data } = await axios.get(`${API_URL}/profile`, { headers: { 'x-token': token } });
-        console.log('data from profile', data);
 
         return data;
     },
 
     getProducts: async (token:string): Promise<IGetProduct[]> => {
-        console.log(token);
         const { data } = await axios.get(`${API_URL}/products`, { headers: { 'x-token': token } });
-        console.log('new products', data.data);
+
+        return data.data;
+    },
+
+    hashProduct: async (token: string, hash: string): Promise<IGetProduct> => {
+        const header = { 'x-token': token, hash:'hash' };
+        const { data } = await axios.get(`${API_URL}/products/${hash}`, { headers: header });
 
         return data.data;
     },

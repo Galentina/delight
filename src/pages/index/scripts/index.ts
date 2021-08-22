@@ -5,6 +5,9 @@ import { ISubmitEvent } from '../../types/types';
 // eslint-disable-next-line import/named
 import { login, registration } from '../../forms/register_login';
 import { adminProfile, gadgetLink } from '../../forms/elements';
+import { storage } from '../../forms/storage';
+import { getProfile } from '../../forms/getProfile';
+// import { getHashProduct } from '../../forms/getHashProduct';
 
 
 const loginBtn = document.getElementById('loginBtn');
@@ -16,7 +19,6 @@ const loginLink = document.getElementById('loginLink');
 const regPane = document.getElementById('regPane');
 const loginPane = document.getElementById('loginPane');
 const closeImg = loginForm?.querySelector('img');
-// const mobiles = document.getElementById('mobiles');
 
 
 // eslint-disable-next-line max-len
@@ -74,6 +76,13 @@ closeImg.onclick = () => {
     loginForm.classList.remove('popup-show');
 };
 
+if (storage.getItem('token')) {
+    getProfile();
+    if (gadgetLink) gadgetLink.className = 'btn-red';
+    if (adminProfile) adminProfile.className = 'profile';
+    loginBtn.style.display = 'none';
+    if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
+}
 
 const registerForm = <HTMLFormElement>regPane?.querySelector('form');
 registerForm.onsubmit = (event) => {
@@ -99,3 +108,15 @@ loginInForm.onsubmit = (event) => {
     if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
 };
 
+// const cardsEvent: any = allCards.querySelectorAll('.item_card');
+// console.log(cardsEvent[0]);
+// console.log(cardsEvent.length);
+// for (let i = 0; i < cardsEvent.length; i++) {
+//     cardsEvent[i].addEventListener('click', () => {
+//         const link = cardsEvent[i].href;
+//         const hash = link.slice(link.indexOf('=') + 1);
+//         storage.setItem('chosenItem', hash);
+//         console.log(hash);
+//         getHashProduct(cardsEvent[i]);
+//     });
+// }
