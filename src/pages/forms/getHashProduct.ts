@@ -7,7 +7,7 @@ import {
     tableBrightness, tableContrast, tableMatrix, tableCameras,
     showCharacteristics, wrightReview, reviewButton, characteristicsButton, itemPrice, addToBasket,
 } from './elements';
-import {addItemToBasket} from "./addItemToBasket";
+import { addItemToBasket } from './addItemToBasket';
 
 export const getHashProduct = (token: string, hash: string) => {
     try {
