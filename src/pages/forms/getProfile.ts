@@ -18,6 +18,7 @@ export const getProfile = () => {
         arrayNewProducts.then((res) => {
             res.map((el) => {
                 addNewProduct(el);
+                storage.setAllItems('allItems', res);
 
                 return null;
             });

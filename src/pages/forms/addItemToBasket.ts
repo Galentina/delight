@@ -1,5 +1,9 @@
+import { storage } from './storage';
 
 
-export const addItemToBasket = () => {
-    return null;
+export const addItemToBasket = (hash: string) => {
+    storage.setItem('basket', hash);
+
+
+    return hash;
 };

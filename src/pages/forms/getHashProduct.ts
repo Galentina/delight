@@ -5,9 +5,11 @@ import {
     tableColor, editProd, mem, mem128, mem64,
     tableProcessor, prodName, tableMem, tableGraphics,
     tableBrightness, tableContrast, tableMatrix, tableCameras,
-    showCharacteristics, wrightReview, reviewButton, characteristicsButton, itemPrice, addToBasket,
+    showCharacteristics, wrightReview, reviewButton, characteristicsButton,
+    itemPrice, addToBasket, itemsInBasket,
 } from './elements';
 import { addItemToBasket } from './addItemToBasket';
+import { storage } from './storage';
 
 export const getHashProduct = (token: string, hash: string) => {
     try {
@@ -43,7 +45,8 @@ export const getHashProduct = (token: string, hash: string) => {
             if (itemPrice) { itemPrice.innerHTML = `${price} &#8364;`; }
             if (addToBasket) {
                 addToBasket.addEventListener('click', () => {
-                    addItemToBasket();
+                    addItemToBasket(hash);
+                    if (itemsInBasket) itemsInBasket.innerHTML = storage.getItem('basket').length;
                 });
             }
             if (tableMem) { tableMem.innerHTML = `${memory} GB`; }

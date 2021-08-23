@@ -22,6 +22,7 @@
 
 			<a id="cartIcon" href="#" class="cart_block">
 				<img src="img/icon/cart.svg" alt="Cart icon">
+				<span id="basket" class="cart_block badge">0</span>
 			</a>
 
 			<button id="loginBtn" class="btn-blue">Enter</button>
@@ -91,7 +92,7 @@
 						<p id="price" class="price">835 &nbsp;&#8364;</p>
 						<p class="availability">In stock</p>
 
-						<button id="basked" style="cursor: pointer">Add to Basket</button>
+						<button id="toBasket" style="cursor: pointer">Add to Basket</button>
 					</div>
 				</div>
 			</div>
@@ -326,22 +327,12 @@
 		</div>
 	</div>
 
-	<div class="popup_form popup_cart">
-		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
+	<div id="showBasket" class="popup_form popup_cart">
+		<img id="closeBasket" src="img/icon/close.svg" class="close-icon" alt="Close icon">
 
-		<h2>Корзина</h2>
-		<div class="receipt_list">
-			<div class="cart_item">
-				<p class="item_name">Apple HomePod</p>
-				<p class="item_price">&#8364; 250</p>
-				<input type="text" class="item_count" value="2">
-
-				<div class="control-remove">
-					<img src="img/icon/plus.svg" alt="">
-				</div>
-
-			</div>
-			<div class="cart_item">
+		<h2>Basket</h2>
+		<div id="itemsList" class="receipt_list">
+			<div style="display: none" class="cart_item">
 				<p class="item_name">Apple HomePod</p>
 				<p class="item_price">&#8364; 250</p>
 				<input type="text" class="item_count" value="2">
@@ -355,9 +346,9 @@
 		<div class="total-cost_block">
 			<p class="total-cost_label">Total cost:</p>
 
-			<p class="total-cost_cost">$<span id="total">850</span></p>
+			<p id="totalCost" class="total-cost_cost">&#8364;<span id="total">850</span></p>
 		</div>
-		<a href="#" class="btn-blue">Checkout</a>
+		<a id="blueButton" href="#" style="width: 50px" class="btn-blue">Checkout</a>
 	</div>
 </body>
 </html>

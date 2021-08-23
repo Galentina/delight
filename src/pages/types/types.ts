@@ -79,3 +79,9 @@ export interface IGetProduct {
     'price': number,
     'category': number
 }
+
+export type TBasket = {
+    hash: string,
+    date: number,
+    number: number
+};

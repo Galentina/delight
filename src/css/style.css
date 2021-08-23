@@ -108,14 +108,29 @@ nav .logo img {
   height: auto;
 }
 nav .cart_block {
-  display: block;
+  display: flex;
   flex-shrink: 0;
   margin-right: 50px;
 }
+
 nav .cart_block img {
   width: 30px;
   height: auto;
 }
+
+
+.badge {
+  color: red;
+  background: #fcf0e4;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background-blend-mode: multiply;
+}
+
 nav .btn-red {
   margin-left: auto;
   margin-right: 50px;

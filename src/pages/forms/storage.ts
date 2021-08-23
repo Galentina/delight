@@ -1,3 +1,4 @@
+import { IGetProduct, TBasket } from '../types/types';
 
 
 class Storage {
@@ -7,7 +8,32 @@ class Storage {
     }
 
     setItem(key: string, item: string) {
-        localStorage.setItem(key, JSON.stringify(item));
+        if (key === 'basket') {
+            let allItems;
+            if (!this.getItem('basket')) allItems = [];
+            else allItems = this.getItem('basket');
+            console.log(allItems);
+            let quantity = false;
+            for (let i = 0; i < allItems.length; i++) {
+                if (allItems[i].hash === item) {
+                    allItems[i].number += 1; allItems[i].date = Date.now(); quantity = true; break;
+                }
+            }
+            if (quantity === false) allItems.push({ hash: item, date: Date.now(), number: 1 });
+            localStorage.setItem(key, JSON.stringify(allItems));
+        } else {
+            localStorage.setItem(key, JSON.stringify(item));
+        }
+    }
+
+    setAllItems(key: string, items: IGetProduct[]) {
+        localStorage.setItem(key, JSON.stringify(items));
+    }
+
+    delItem(key: string, item: string) {
+        const allItems = this.getItem(key);
+        const restOfItems = allItems.filter((el: TBasket | IGetProduct) => el.hash !== item);
+        localStorage.setItem(key, JSON.stringify(restOfItems));
     }
 }
 

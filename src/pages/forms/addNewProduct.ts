@@ -1,7 +1,5 @@
 import { IGetProduct } from '../types/types';
 import { allCards } from './elements';
-// import { storage } from './storage';
-// import { getHashProduct } from './getHashProduct';
 
 
 export const addNewProduct = (el:IGetProduct) => {
