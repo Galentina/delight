@@ -12,7 +12,6 @@ class Storage {
             let allItems;
             if (!this.getItem('basket')) allItems = [];
             else allItems = this.getItem('basket');
-            console.log(allItems);
             let quantity = false;
             for (let i = 0; i < allItems.length; i++) {
                 if (allItems[i].hash === item) {

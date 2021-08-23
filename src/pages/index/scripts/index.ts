@@ -108,15 +108,3 @@ loginInForm.onsubmit = (event) => {
     if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
 };
 
-// const cardsEvent: any = allCards.querySelectorAll('.item_card');
-// console.log(cardsEvent[0]);
-// console.log(cardsEvent.length);
-// for (let i = 0; i < cardsEvent.length; i++) {
-//     cardsEvent[i].addEventListener('click', () => {
-//         const link = cardsEvent[i].href;
-//         const hash = link.slice(link.indexOf('=') + 1);
-//         storage.setItem('chosenItem', hash);
-//         console.log(hash);
-//         getHashProduct(cardsEvent[i]);
-//     });
-// }

@@ -3,7 +3,7 @@ import '../../../css/gadget-page.css';
 import { storage } from '../../forms/storage';
 import { getProfile } from '../../forms/getProfile';
 import {
-    adminProfile, cartIcon, gadgetLink, itemsInBasket, showBasket,
+    adminProfile, blueButton, cartIcon, gadgetLink, itemsInBasket, showBasket,
 } from '../../forms/elements';
 import { getHashProduct } from '../../forms/getHashProduct';
 import { fillBasketForm } from '../../forms/fillBasketForm';
@@ -43,6 +43,8 @@ if (cartIcon) {
         fillBasketForm();
     });
 }
+
+if (blueButton) blueButton.addEventListener('click', () => alert('Your order was successfully placed'));
 
 
 console.log('gadget-page.html');

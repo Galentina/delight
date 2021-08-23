@@ -53,8 +53,4 @@ export const deleteBasketItems = (itemPrice: number) => {
 
         return null;
     });
-    // for (let i = 1; i < allDelItemsButtons.length; i++) {
-    //     const image = allDelItemsButtons[i].getElementsByTagName('img');
-    //
-    // }
 };
