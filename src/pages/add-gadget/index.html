@@ -14,7 +14,7 @@
 
 			<div class="profile">
 				<img src="img/icon/avatar.jpg" class="profile_photo" alt="">
-				<p id="profileName" class="profile_name">Max Petrov</p>
+				<p id="profileName" class="profile_name">Your name</p>
 			</div>
 
 			<a href="#" class="cart_block hidden">
@@ -161,7 +161,7 @@
 					</tr>
 				</table>
 
-				<input type="submit" value="Сохранить" class="btn-blue">
+				<input type="submit" value="Save a new gadget" class="btn-blue">
 			</form>
 
 			<hr>
@@ -238,18 +238,18 @@
 
 	<div class="popup_back "></div>
 
-	<div class="popup_form popup_login ">
+	<div id="loginForm" class="popup_form popup_login ">
 
 		<img src="img/icon/close.svg" class="close-icon" alt="Close icon">
 
 		<div class="tab_section">
 			<div class="tab_navigation">
 				<ul>
-					<li>Registration</li>
-					<li class="active">Login</li>
+					<li id="regLink">Registration</li>
+					<li id="loginLink" class="active">Login</li>
 				</ul>
 			</div>
-			<div class="tab_pane show">
+			<div id="loginPane" class="tab_pane show">
 				<form action="" method="">
 					<fieldset>
 						<label for="signInEmail">E-mail</label>
@@ -257,18 +257,18 @@
 					</fieldset>
 					<fieldset>
 						<label for="signInPassword">Password</label>
-						<input type="password" id="signInPassword" placeholder="secret password">
+						<input name="password" type="password" id="signInPassword" placeholder="secret password">
 					</fieldset>
 
 					<input type="submit" class="btn-blue">
 				</form>
 			</div>
 
-			<div class="tab_pane">
+			<div id="regPane" class="tab_pane">
 				<form action="" method="">
 					<fieldset>
 						<label for="username">Name</label>
-						<input type="text" id="username" placeholder="username">
+						<input name="name" type="text" id="username" placeholder="username">
 					</fieldset>
 					<fieldset>
 						<label for="signUpEmail">E-mail</label>
@@ -276,7 +276,7 @@
 					</fieldset>
 					<fieldset>
 						<label for="signUpPassword">Password</label>
-						<input type="password" id="signUpPassword" placeholder="secret password">
+						<input name="password" type="password" id="signUpPassword" placeholder="secret password">
 					</fieldset>
 
 					<input type="submit" class="btn-blue">

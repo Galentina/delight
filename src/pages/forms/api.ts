@@ -57,4 +57,11 @@ export const api = Object.freeze({
 
         return data.data;
     },
+
+    createNewGadget: async (token: string, payload: any) => {
+        const header = { 'x-token': token };
+        const { data } = await axios.post(`${API_URL}/products`, payload, { headers: header });
+
+        return data.data;
+    },
 });

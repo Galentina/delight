@@ -16,7 +16,6 @@ export const registration = (formData: FormData) => {
         try {
             const reg = api.register(<IRegister>payload);
             reg.then((answer: IRegistrationToken) => {
-
                 return answer.data;
             })
                 .catch((error) => console.log(error.messade));

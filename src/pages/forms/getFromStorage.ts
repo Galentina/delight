@@ -11,3 +11,7 @@ export const getBasket = () => {
 export const getAllItems = () => {
     return storage.getItem('allItems');
 };
+
+export const getAdminName = () => {
+    return storage.getItem('admin');
+};

@@ -52,32 +52,58 @@ export interface IProducts {
     }
 }
 
-export interface IGetProduct {
-    'hash': string,
-    'name': string,
-    'characteristics': {
-        'memory'?: number,
-        'colors': [
+export interface INewProduct {
+    name: string,
+    category: string,
+    price: number,
+    characteristics: {
+        memory: number | string,
+        colors: [
             string,
         ],
-        'processor': string,
-        'graphics': number,
-        'brightness': number,
-        'contrast': number,
-        'matrix': number,
-        'cameras': number
-    },
-    'reviews': [
+        processor: number | string,
+        graphics: number | string,
+        brightness: number | string,
+        contrast: number | string,
+        matrix: number | string,
+        cameras: number,
+    }
+    reviews: [
         {
-            'name': string,
-            'hash': string,
-            'pros': string,
-            'cons': string
+            name: string,
+            hash: string,
+            pros: string,
+            cons: string
         },
     ],
-    'created': number,
-    'price': number,
-    'category': number
+}
+
+export interface IGetProduct extends INewProduct {
+    hash: string,
+    // name: string,
+    // characteristics: {
+    //     memory?: number | string,
+    //     colors: [
+    //         string,
+    //     ],
+    //     processor: number | string,
+    //     graphics: number | string,
+    //     brightness: number | string,
+    //     contrast: number | string,
+    //     matrix: number | string,
+    //     cameras: number
+    // },
+    // reviews: [
+    //     {
+    //         name: string,
+    //         hash: string,
+    //         pros: string,
+    //         cons: string
+    //     },
+    // ],
+    created?: number,
+    // price: number,
+    // category: number | string
 }
 
 export type TBasket = {

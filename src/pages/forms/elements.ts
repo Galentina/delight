@@ -1,4 +1,4 @@
-export const gadgetLink = <HTMLFormElement>document.getElementById('addGadgetLink');
+export const gadgetLink = <HTMLElement>document.getElementById('addGadgetLink');
 export const adminProfile = <HTMLFormElement>document.getElementById('profile');
 export const profileName = <HTMLFormElement>document.getElementById('profileName');
 export const allCards = <HTMLFormElement>document.getElementById('cards');
@@ -36,3 +36,4 @@ export const reviewForm = <HTMLFormElement>document.getElementById('reviewForm')
 export const reviewName = <HTMLElement>document.getElementById('reviewName');
 export const reviewPros = <HTMLElement>document.getElementById('reviewPros');
 export const reviewCons = <HTMLElement>document.getElementById('reviewCons');
+export const addGadgetForm = <HTMLFormElement>document.getElementById('form');
