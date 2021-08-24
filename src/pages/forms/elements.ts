@@ -37,3 +37,7 @@ export const reviewName = <HTMLElement>document.getElementById('reviewName');
 export const reviewPros = <HTMLElement>document.getElementById('reviewPros');
 export const reviewCons = <HTMLElement>document.getElementById('reviewCons');
 export const addGadgetForm = <HTMLFormElement>document.getElementById('form');
+export const modalOpen = <HTMLElement>document.getElementById('modal');
+export const closeModal = <HTMLElement>document.getElementById('closeModal');
+export const modal = <HTMLElement>document.getElementById('modal');
+export const textModal = <HTMLElement>document.getElementById('textModal');

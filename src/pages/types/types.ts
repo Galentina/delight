@@ -57,15 +57,15 @@ export interface INewProduct {
     category: string,
     price: number,
     characteristics: {
-        memory: number | string,
+        memory: number,
         colors: [
             string,
         ],
-        processor: number | string,
-        graphics: number | string,
-        brightness: number | string,
-        contrast: number | string,
-        matrix: number | string,
+        processor: number,
+        graphics: number,
+        brightness: number,
+        contrast: number,
+        matrix: number,
         cameras: number,
     }
     reviews: [

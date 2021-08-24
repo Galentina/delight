@@ -1,7 +1,9 @@
-import { addGadgetForm } from './elements';
+import { addGadgetForm, textModal } from './elements';
 import { ISubmitEvent } from '../types/types';
 import { getToken } from './getFromStorage';
 import { api } from './api';
+import { modalClosing, modalOpening } from './modalOpening';
+import { validateNewGadget } from './shema';
 
 
 export const gadgetForm = () => {
@@ -11,10 +13,10 @@ export const gadgetForm = () => {
         const formData = new FormData(submitEvent.target);
 
         const name = formData.get('naming');
-        const price = formData.get('price');
+        const price = Number(formData.get('price'));
         const memory = Number(formData.get('memory'));
         const color = formData.get('color');
-        const processor = formData.get('processor');
+        const processor = Number(formData.get('processor'));
         const graphics = Number(formData.get('graphics'));
         const brightness = Number(formData.get('brightness'));
         const contrast = Number(formData.get('contrast'));
@@ -50,17 +52,23 @@ export const gadgetForm = () => {
         console.log(token);
         try {
             const sendForm = api.createNewGadget(token, payload);
-            console.log('DONE1');
             sendForm.then((data) => {
-                console.log('DONE2');
+                textModal.innerHTML = 'A new gadget\nwas successfully added\nto the list';
 
                 return data;
             })
-                .catch((error) => console.log(error.message));
+                .catch((error) => {
+                    console.log(error.message);
+                    const answer = validateNewGadget(payload);
+                    textModal.innerHTML = answer;
+                });
         } catch (error) {
             console.log(error.message);
 
             return null;
         }
+        modalOpening();
+        setTimeout(() => { modalClosing(); }, 5000);
+        setTimeout(() => { addGadgetForm.reset(); }, 5500);
     });
 };
