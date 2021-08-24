@@ -69,10 +69,10 @@ export interface IGetProduct {
     },
     'reviews': [
         {
-            'name': number,
-            'hash': number,
-            'pros': number,
-            'cons': number
+            'name': string,
+            'hash': string,
+            'pros': string,
+            'cons': string
         },
     ],
     'created': number,
@@ -85,3 +85,17 @@ export type TBasket = {
     date: number,
     number: number
 };
+
+export type TAjacentHTML = 'beforebegin' | 'afterbegin' | 'beforeend' | 'afterend';
+
+export type TReview = {
+    'name': string,
+    'hash'?: string,
+    'pros': string,
+    'cons': string
+};
+
+export interface IYupErrors {
+    path: string;
+    message: string;
+}

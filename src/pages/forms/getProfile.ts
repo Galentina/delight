@@ -1,10 +1,10 @@
-import { storage } from './storage';
 import { api } from './api';
 import { profileName } from './elements';
-import { addNewProduct } from './addNewProduct';
+import { getProducts } from './getProducts';
+import { getToken } from './getFromStorage';
 
 export const getProfile = () => {
-    const token = storage.getItem('token');
+    const token = getToken();
     if (token) {
         const data = api.profile(token);
         data.then((res) => {
@@ -14,17 +14,6 @@ export const getProfile = () => {
         })
             .catch((error) => console.log(error.message));
 
-        const arrayNewProducts = api.getProducts(token);
-        arrayNewProducts.then((res) => {
-            res.map((el) => {
-                addNewProduct(el);
-                storage.setAllItems('allItems', res);
-
-                return null;
-            });
-
-            return console.log('');
-        })
-            .catch((error) => console.log(error.message));
+        getProducts(token);
     }
 };

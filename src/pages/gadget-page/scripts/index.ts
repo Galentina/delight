@@ -7,6 +7,8 @@ import {
 } from '../../forms/elements';
 import { getHashProduct } from '../../forms/getHashProduct';
 import { fillBasketForm } from '../../forms/fillBasketForm';
+import { additionalReview } from '../../forms/generateReviewTable';
+import { getBasket, getToken } from '../../forms/getFromStorage';
 
 const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -21,30 +23,30 @@ if (loginBtn) {
     };
 }
 
-const token = storage.getItem('token');
-const inBasket = storage.getItem('basket') ? storage.getItem('basket').length : 0;
+const token = getToken();
+const inBasket = getBasket() ? storage.getItem('basket').length : 0;
 if (token) {
     getProfile();
     if (gadgetLink) gadgetLink.className = 'btn-red';
     if (adminProfile) adminProfile.className = 'profile';
     if (loginBtn) { loginBtn.style.display = 'none'; }
     if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
-    if (itemsInBasket) itemsInBasket.innerHTML = inBasket;
-    console.log(inBasket);
+    itemsInBasket.innerHTML = inBasket;
 }
 
+// item descriptions
 const curLoc = window.location.href;
 const hash = curLoc.slice(curLoc.indexOf('=') + 1);
 getHashProduct(token, hash);
 
-if (cartIcon) {
-    cartIcon.addEventListener('click', () => {
-        if (showBasket) showBasket.className = 'popup_form popup_cart popup-show';
-        fillBasketForm();
-    });
-}
+cartIcon.addEventListener('click', () => {
+    showBasket.className = 'popup_form popup_cart popup-show';
+    fillBasketForm();
+});
 
-if (blueButton) blueButton.addEventListener('click', () => alert('Your order was successfully placed'));
+blueButton.addEventListener('click', () => alert('Your order was successfully placed'));
 
+// user reviews
+additionalReview(hash);
 
 console.log('gadget-page.html');

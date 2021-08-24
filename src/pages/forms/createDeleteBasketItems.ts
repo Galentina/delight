@@ -1,12 +1,13 @@
 import { storage } from './storage';
 import { itemsInBasket, itemsList, totalCost } from './elements';
-import { IGetProduct } from '../types/types';
+import { IGetProduct, TAjacentHTML } from '../types/types';
+import { getAllItems, getBasket } from './getFromStorage';
 
 
 export const createBasketItems = () => {
-    if (itemsList) itemsList.innerHTML = '';
-    const allItems = storage.getItem('allItems');
-    const chosenItems = storage.getItem('basket');
+    itemsList.innerHTML = '';
+    const allItems = getAllItems();
+    const chosenItems = getBasket();
     const listOfItems = itemsList;
     let itemPrice = 0;
     for (let i = 0; i < chosenItems.length; i++) {
@@ -20,34 +21,28 @@ export const createBasketItems = () => {
                             <img src="img/icon/plus.svg" data-hash="${chosenItems[i].hash}" alt="">
                             </div>
                             </div>`;
-        if (listOfItems) listOfItems.insertAdjacentHTML(<'beforebegin' | 'afterbegin' | 'beforeend' | 'afterend'>'afterBegin', addedElement);
-        // if (document.querySelector('.control-remove')) {
-        //     // @ts-ignore
-        //     document.querySelector('.control-remove').addEventListener('click', () => {});
-        // } return itemPrice;
+        if (listOfItems) listOfItems.insertAdjacentHTML(<TAjacentHTML>'afterBegin', addedElement);
     }
 
     return itemPrice;
 };
 export const deleteBasketItems = (itemPrice: number) => {
-    // eslint-disable-next-line array-callback-return
-    console.log('I am here');
     let finalPrice = itemPrice;
     Array.from(document.querySelectorAll('.control-remove')).map((el) => {
         el.addEventListener('click', () => {
-            const parant = el.parentElement;
+            const parent = el.parentElement;
             let hash;
-            if (parant) {
-                hash = parant?.id;
-                parant.style.display = 'none';
-                const price = parant.querySelector('.item_price')?.getAttribute('value');
-                const number = parant.querySelector('.item_count')?.getAttribute('value');
+            if (parent) {
+                hash = parent?.id;
+                parent.style.display = 'none';
+                const price = parent.querySelector('.item_price')?.getAttribute('value');
+                const number = parent.querySelector('.item_count')?.getAttribute('value');
                 finalPrice -= Number(price) * Number(number);
                 console.log('price', price, 'number', number);
-                if (totalCost) totalCost.innerHTML = `${finalPrice}`;
+                totalCost.innerHTML = `${finalPrice}`;
             }
             if (hash) storage.delItem('basket', hash);
-            if (itemsInBasket) itemsInBasket.innerHTML = storage.getItem('basket') ? storage.getItem('basket').length : 0;
+            itemsInBasket.innerHTML = storage.getItem('basket') ? storage.getItem('basket').length : 0;
         });
 
 

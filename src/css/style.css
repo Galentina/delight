@@ -562,3 +562,12 @@ table tr td:last-child {
   width: 20px;
   height: 20px;
 }
+
+.addReview {
+  font-size: 12px;
+  position: relative;
+  left: 30px;
+  width: 200px;
+  height: 20px;
+  background-color: #262626;
+}

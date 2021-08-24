@@ -1,9 +1,9 @@
+// eslint-disable-next-line import/namespace,import/named
 import { api } from './api';
 import { ILogin, IRegister, IRegistrationToken } from '../types/types';
 import { storage } from './storage';
-// import { profileName } from './elements';
-// import { addNewProduct } from './addNewProduct';
 import { getProfile } from './getProfile';
+import { getToken } from './getFromStorage';
 
 export const registration = (formData: FormData) => {
     const name = formData.get('name');
@@ -16,9 +16,8 @@ export const registration = (formData: FormData) => {
         try {
             const reg = api.register(<IRegister>payload);
             reg.then((answer: IRegistrationToken) => {
-                console.log(answer.data);
 
-                return null;
+                return answer.data;
             })
                 .catch((error) => console.log(error.messade));
         } catch (error) {
@@ -35,7 +34,7 @@ export const login = (formData: FormData) => {
 
     const payload = { email, password };
 
-    if (storage.getItem('token')) getProfile();
+    if (getToken()) getProfile();
     else {
         try {
             const log = api.login(<ILogin>payload);
@@ -54,31 +53,4 @@ export const login = (formData: FormData) => {
         }
     }
 };
-
-// export const getProfile = () => {
-//     const token = storage.getItem('token');
-//     console.log('token from storage', token);
-//     if (token) {
-//         const data = api.profile(token);
-//         data.then((res) => {
-//             if (profileName) profileName.textContent = res.data.name;
-//
-//             return null;
-//         })
-//             .catch((error) => console.log(error.message));
-//
-//         const arrayNewProducts = api.getProducts(token);
-//         arrayNewProducts.then((res) => {
-//             console.log(res);
-//             res.map((el) => {
-//                 addNewProduct(el);
-//
-//                 return console.log('done');
-//             });
-//
-//             return console.log('done');
-//         })
-//             .catch((error) => console.log(error.message));
-//     }
-// };
 

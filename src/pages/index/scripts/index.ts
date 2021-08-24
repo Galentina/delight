@@ -2,12 +2,10 @@ import '../../../css/index.css';
 import '../../../css/style.css';
 import { ISubmitEvent } from '../../types/types';
 
-// eslint-disable-next-line import/named
 import { login, registration } from '../../forms/register_login';
 import { adminProfile, gadgetLink } from '../../forms/elements';
-import { storage } from '../../forms/storage';
 import { getProfile } from '../../forms/getProfile';
-// import { getHashProduct } from '../../forms/getHashProduct';
+import { getToken } from '../../forms/getFromStorage';
 
 
 const loginBtn = document.getElementById('loginBtn');
@@ -76,7 +74,7 @@ closeImg.onclick = () => {
     loginForm.classList.remove('popup-show');
 };
 
-if (storage.getItem('token')) {
+if (getToken()) {
     getProfile();
     if (gadgetLink) gadgetLink.className = 'btn-red';
     if (adminProfile) adminProfile.className = 'profile';

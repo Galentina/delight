@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
     IGetProduct,
-    ILogin, IRegister, IRegistrationToken,
+    ILogin, IRegister, IRegistrationToken, TReview,
 } from '../types/types';
 
 
@@ -37,8 +37,23 @@ export const api = Object.freeze({
     },
 
     hashProduct: async (token: string, hash: string): Promise<IGetProduct> => {
-        const header = { 'x-token': token, hash:'hash' };
+        const header = { 'x-token': token, hash };
         const { data } = await axios.get(`${API_URL}/products/${hash}`, { headers: header });
+
+        return data.data;
+    },
+    // eslint-disable-next-line max-len
+    removeReviewByHash: async (token: string, hash: string, reviewHash: string): Promise<IGetProduct> => {
+        const header = { 'x-token': token, hash, reviewHash };
+        console.log('x-token', token, hash, reviewHash);
+        const { data } = await axios.delete(`${API_URL}/products/${hash}/reviews/${reviewHash}`, { headers: header });
+
+        return data.data;
+    },
+
+    postReview: async (token: string, payload: TReview, hash: string): Promise<IGetProduct> => {
+        const header = { 'x-token': token, hash };
+        const { data } = await axios.post(`${API_URL}/products/${hash}/reviews`, payload, { headers: header });
 
         return data.data;
     },

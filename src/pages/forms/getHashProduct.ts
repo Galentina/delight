@@ -10,6 +10,7 @@ import {
 } from './elements';
 import { addItemToBasket } from './addItemToBasket';
 import { storage } from './storage';
+import { generateReviewTable } from './generateReviewTable';
 
 export const getHashProduct = (token: string, hash: string) => {
     try {
@@ -21,11 +22,9 @@ export const getHashProduct = (token: string, hash: string) => {
                 contrast, matrix, cameras,
             } = answer.characteristics;
             console.log('answer', answer);
-            if (prodName) { prodName.innerHTML = name; }
-            if (editProd) {
-                editProd.className = 'btn-red';
-                editProd.style.cursor = 'pointer';
-            }
+            prodName.innerHTML = name;
+            editProd.className = 'btn-red';
+            editProd.style.cursor = 'pointer';
             if (mem64 && mem128) {
                 if (memory === 64) {
                     mem64.className = 'param selected';
@@ -42,42 +41,37 @@ export const getHashProduct = (token: string, hash: string) => {
                     mem64.className = 'param';
                 }
             }
-            if (itemPrice) { itemPrice.innerHTML = `${price} &#8364;`; }
-            if (addToBasket) {
-                addToBasket.addEventListener('click', () => {
-                    addItemToBasket(hash);
-                    if (itemsInBasket) itemsInBasket.innerHTML = storage.getItem('basket').length;
-                });
-            }
-            if (tableMem) { tableMem.innerHTML = `${memory} GB`; }
+            itemPrice.innerHTML = `${price} &#8364;`;
+            addToBasket.addEventListener('click', () => {
+                addItemToBasket(hash);
+                itemsInBasket.innerHTML = storage.getItem('basket').length;
+            });
+            tableMem.innerHTML = `${memory} GB`;
             let allColors;
             if (colors) {
                 if (colors.length === 1) allColors = colors.join('');
                 else allColors = colors.join(', ');
             }
-            if (tableColor) { tableColor.innerHTML = `${allColors}`; }
-            if (tableProcessor) { tableProcessor.innerHTML = `${processor}`; }
-            if (tableGraphics) { tableGraphics.innerHTML = `${graphics}`; }
-            if (tableBrightness) { tableBrightness.innerHTML = `${brightness}`; }
-            if (tableContrast) { tableContrast.innerHTML = `${contrast}`; }
-            if (tableMatrix) { tableMatrix.innerHTML = `${matrix}`; }
-            if (tableCameras) { tableCameras.innerHTML = `${cameras}`; }
-            if (characteristicsButton) {
-                characteristicsButton.addEventListener('click', () => {
-                    if (characteristicsButton) characteristicsButton.className = 'active';
-                    if (reviewButton) reviewButton.className = '';
-                    if (showCharacteristics) showCharacteristics.className = 'tab_pane show';
-                    if (wrightReview) wrightReview.className = 'tab_pane';
-                });
-            }
-            if (reviewButton) {
-                reviewButton.addEventListener('click', () => {
-                    if (reviewButton) reviewButton.className = 'active';
-                    if (characteristicsButton) characteristicsButton.className = '';
-                    if (showCharacteristics) showCharacteristics.className = 'tab_pane';
-                    if (wrightReview) wrightReview.className = 'tab_pane show';
-                });
-            }
+            tableColor.innerHTML = `${allColors}`;
+            tableProcessor.innerHTML = `${processor}`;
+            tableGraphics.innerHTML = `${graphics}`;
+            tableBrightness.innerHTML = `${brightness}`;
+            tableContrast.innerHTML = `${contrast}`;
+            tableMatrix.innerHTML = `${matrix}`;
+            tableCameras.innerHTML = `${cameras}`;
+            characteristicsButton.addEventListener('click', () => {
+                characteristicsButton.className = 'active';
+                reviewButton.className = '';
+                showCharacteristics.className = 'tab_pane show';
+                wrightReview.className = 'tab_pane';
+            });
+            reviewButton.addEventListener('click', () => {
+                reviewButton.className = 'active';
+                characteristicsButton.className = '';
+                showCharacteristics.className = 'tab_pane';
+                wrightReview.className = 'tab_pane show';
+                generateReviewTable(answer);
+            });
 
 
             return null;

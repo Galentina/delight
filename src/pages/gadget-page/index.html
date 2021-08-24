@@ -160,47 +160,37 @@
 				<div id="reviewsPane" class="tab_pane">
 					<div class="feedback_layout">
 						<div class="feedback_list">
-							<h2><span>2</span>&nbsp;<span>Reviews</span></h2>
+							<h2><span id="reviewNumber">2</span>&nbsp;<span>Reviews</span></h2>
 							<div id="userReviews">
-								<article>
-									<p class="name">Sergey Ivanov<img src="img/icon/close-red.svg" class="close-icon" alt="Close icon"></p>
-									<div class="feedback_info pros">
-										<p class="feedback_title">Advantages</p>
-										<p class="feedback_content">The speed of work. Convenience. Very convenient system of 100% transfer of data from the past iPhone.
-											I was very pleased with the headphones.</p>
-									</div>
-									<div class="feedback_info cons">
-										<p class="feedback_title">Disadvantages</p>
-										<p class="feedback_content">The phone is heavy ... ie. by itself is still normal, but if in a case, then it's hard (I decided for myself in the first
-											week or two to walk around cleanly with a protective rear glass). that the back glass is scratched quickly.</p>
-									</div>
-								</article>
-
-								<article>
-									<p class="name">Peter Sergeev<img src="img/icon/close-red.svg" class="close-icon" alt="Close icon"></p>
-
-									<div class="feedback_info pros">
-										<p class="feedback_title">Advantages</p>
-										<p class="feedback_content">Super camera. After the past, the difference is very noticeable. The speed of work is approx. In addition,
-											the charge is retained better, the sound is louder and the network catches almost everywhere</p>
-									</div>
-									<div class="feedback_info cons">
-										<p class="feedback_title">Disadvantages</p>
-										<p class="feedback_content">After it turned off by itself, then it hung so hard that I could not even turn it off.
-											A couple of minutes later it woke up. Hope this was due to the new firmware. :-(</p>
-									</div>
-								</article>
+								<div style="display: none">
+									<article id="article">
+										<p class="name">Sergey Ivanov<img src="img/icon/close-red.svg" class="close-icon" alt="Close icon"></p>
+										<div class="feedback_info pros">
+											<p class="feedback_title">Advantages</p>
+											<p class="feedback_content">The speed of work. Convenience. Very convenient system of 100% transfer of data from the past iPhone.
+												I was very pleased with the headphones.</p>
+										</div>
+										<div class="feedback_info cons">
+											<p class="feedback_title">Disadvantages</p>
+											<p class="feedback_content">The phone is heavy ... ie. by itself is still normal, but if in a case, then it's hard (I decided for myself in the first
+												week or two to walk around cleanly with a protective rear glass). that the back glass is scratched quickly.</p>
+										</div>
+									</article>
+								</div>
 							</div>
 						</div>
-						<div class="feedback_form">
+						<div  class="feedback_form">
 							<h2>Leave your review</h2>
 
-							<form action="" method="">
-								<input type="text" name="name" placeholder="Name">
+							<form id="reviewForm" action="" method="">
+								<p id="reviewName" style="color: #262626" class="addReview">Please insert your name</p>
+								<input type="text" name="name" placeholder="Name" value="">
+								<p style="color: #262626" class="addReview" id="reviewPros">Please insert advantages</p>
 								<textarea name="pros" placeholder="Advantages"></textarea>
+								<p style="color: #262626" class="addReview" id="reviewCons">Please insert disadvantages</p>
 								<textarea name="cons" placeholder="Disadvantages"></textarea>
 
-								<input type="submit" class="btn-blue" value="Добавить отзыв">
+								<input type="submit" class="btn-blue" value="Add review">
 							</form>
 						</div>
 					</div>
