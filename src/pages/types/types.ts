@@ -32,7 +32,7 @@ export interface IProducts {
     name: string,
     category: string,
     price: number,
-    reviews: [
+    reviews?: [
         {
             hash: string,
             name: string,

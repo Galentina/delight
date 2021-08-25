@@ -1,6 +1,6 @@
 
 import * as yup from 'yup';
-import { FieldNames, IYupErrors } from '../types/types';
+import { FieldNames, IProducts, IYupErrors } from '../types/types';
 import {
     emailInputError, nameInputError, signUpEmail, username, passwordInputError,
     reviewCons, reviewForm, reviewName, reviewPros, signUpPassword,
@@ -89,19 +89,20 @@ export const validateReviewError = (payload: {
 };
 
 
-export const validateNewGadget = (payload: any) => {
+export const validateNewGadget = (payload: IProducts) => {
     const {
-        name, price, category, memory, colors, processor, graphics,
+        memory, colors, processor, graphics,
         brightness, contrast, matrix, cameras,
-    } = payload;
+    } = payload.characteristics;
+    const { name, price, category } = payload;
     let answer = '';
     if (!name) answer += 'Name is required.\n';
     if (!price || typeof price !== 'number') answer += 'Price is required an it should be a number.\n';
     if (!category) answer += 'Category is required. ';
     if (!memory || typeof memory !== 'number') answer += 'Memory is required an it should be a number.\n';
     if (!colors) answer += 'Colors is required. ';
-    if (!processor || typeof processor !== 'number') answer += 'Processor is required an it should be a number.\n';
-    if (!graphics || typeof graphics !== 'number') answer += 'Graphics is required an it should be a number.\n';
+    if (!processor || typeof processor !== 'string') answer += 'Processor is required an it should be a number.\n';
+    if (!graphics || typeof graphics !== 'string') answer += 'Graphics is required an it should be a number.\n';
     if (!brightness || typeof brightness !== 'number') answer += 'Brightness is required an it should be a number.\n';
     if (!contrast || typeof contrast !== 'number') answer += 'Contrast is required an it should be a number.\n';
     if (!matrix || typeof matrix !== 'number') answer += 'Matrix is required an it should be a number.\n';

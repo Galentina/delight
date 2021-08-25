@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
     IGetProduct,
-    ILogin, IRegister, IRegistrationToken, TReview,
+    ILogin, IProducts, IRegister, IRegistrationToken, TReview,
 } from '../types/types';
 
 
@@ -58,7 +58,7 @@ export const api = Object.freeze({
         return data.data;
     },
 
-    createNewGadget: async (token: string, payload: any) => {
+    createNewGadget: async (token: string, payload: IProducts) => {
         const header = { 'x-token': token };
         const { data } = await axios.post(`${API_URL}/products`, payload, { headers: header });
 

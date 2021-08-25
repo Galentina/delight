@@ -12,14 +12,14 @@ export const gadgetForm = () => {
         const submitEvent = event as unknown as ISubmitEvent;
         const formData = new FormData(submitEvent.target);
 
-        const name = formData.get('naming');
+        const name = String(formData.get('naming'));
         const price = Number(formData.get('price'));
         const memory = Number(formData.get('memory'));
-        const color = formData.get('color');
-        const processor = Number(formData.get('processor'));
-        const graphics = Number(formData.get('graphics'));
+        const color = String(formData.get('color'));
+        const processor = String(formData.get('processor'));
+        const graphics = String(formData.get('graphics'));
         const brightness = Number(formData.get('brightness'));
-        const contrast = Number(formData.get('contrast'));
+        const contrast = String(formData.get('contrast'));
         const matrix = Number(formData.get('matrix'));
         const cameras = Number(formData.get('cameras'));
         const category = 'phone';
@@ -28,7 +28,6 @@ export const gadgetForm = () => {
             name,
             category,
             price,
-            reviews:[],
             characteristics: {
                 memory,
                 colors: [color],
