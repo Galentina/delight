@@ -1,51 +1,37 @@
-# 📦 Lectrum JS + TS Personal Project
+# 📦 Lectrum JS + TS 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Возможности
+## 
 
 1. Webpack 5
 2. Babel
 3. PostCSS
 4. SASS
 5. Hot dev server
-6. Оптимизация продакшн билда
 
-## Использование
-
-Склонировать проект и установить зависимости.
 
 ```bash
 npm i
 ```
 
-### Дев. режим
-
-Запуск dev сервера
 
 ```bash
 npm run dev
 ```
 
-Дев. сервер будет доступен по адресу http://localhost:8080.
+run on the address http://localhost:8080.
 
-### Прод. режим
 
-1. Сборка проекта
 
 ```bash
 npm run build
 ```
 
-2. Запуск собранного проекта
 
 ```bash
 npm run start
 ```
 
-Собранные файлы находятся в папке `dist`.
-
-## Фичи
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [webpack](https://webpack.js.org/)
@@ -53,7 +39,6 @@ npm run start
 - [SASS](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/)
 
-## Зависимости
 
 ### webpack
 
@@ -103,10 +88,4 @@ npm run start
 - [`prettier`](https://github.com/prettier/prettier) - Dependency for `prettier-webpack-plugin` plugin
 - [`prettier-webpack-plugin`](https://github.com/hawkins/prettier-webpack-plugin) - Prettier configuration for webpack
 
-## Author
 
-- [Andrey Prisniak](https://www.lectrum.io)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
