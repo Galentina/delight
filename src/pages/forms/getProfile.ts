@@ -11,6 +11,7 @@ export const getProfile = () => {
         data.then((res) => {
             if (profileName) profileName.textContent = res.data.name;
             storage.setItem('admin', res.data.name);
+            console.log(res.data.name);
 
             return null;
         })

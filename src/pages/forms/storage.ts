@@ -34,6 +34,10 @@ class Storage {
         const restOfItems = allItems.filter((el: TBasket | IGetProduct) => el.hash !== item);
         localStorage.setItem(key, JSON.stringify(restOfItems));
     }
+
+    delItemFromStorage(key: string) {
+        return localStorage.removeItem(key);
+    }
 }
 
 export const storage = new Storage();

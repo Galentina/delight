@@ -22,21 +22,13 @@ export const gadgetForm = () => {
         const contrast = Number(formData.get('contrast'));
         const matrix = Number(formData.get('matrix'));
         const cameras = Number(formData.get('cameras'));
-        // const created = Date.now();
         const category = 'phone';
 
         const payload = {
             name,
             category,
             price,
-            reviews:[
-                {
-                    hash: '9e02823d-6660-414f-974b-b16beb161597',
-                    name: 'John Snow',
-                    pros: 'Perfect gadget',
-                    cons: 'Weak battery',
-                },
-            ],
+            reviews:[],
             characteristics: {
                 memory,
                 colors: [color],
@@ -53,7 +45,7 @@ export const gadgetForm = () => {
         try {
             const sendForm = api.createNewGadget(token, payload);
             sendForm.then((data) => {
-                textModal.innerHTML = 'A new gadget\nwas successfully added\nto the list';
+                textModal.innerHTML = 'A new gadget was successfully added to the list';
 
                 return data;
             })

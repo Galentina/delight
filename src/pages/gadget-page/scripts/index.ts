@@ -9,6 +9,7 @@ import { getHashProduct } from '../../forms/getHashProduct';
 import { fillBasketForm } from '../../forms/fillBasketForm';
 import { additionalReview } from '../../forms/generateReviewTable';
 import { getBasket, getToken } from '../../forms/getFromStorage';
+import { cleanStorage } from '../../forms/cleanStorage';
 
 const loginBtn = document.getElementById('loginBtn');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -20,6 +21,16 @@ if (loginBtn) {
     loginBtn.onclick = () => {
         overlay?.classList.add('visible');
         loginForm?.classList.add('popup-show');
+    };
+}
+
+if (logoutBtn) {
+    logoutBtn.onclick = () => {
+        if (loginBtn) loginBtn.style.display = 'inherit';
+        logoutBtn.style.display = 'none';
+        if (gadgetLink) gadgetLink.className = 'btn-red hidden';
+        if (adminProfile) adminProfile.className = 'profile hidden';
+        cleanStorage();
     };
 }
 

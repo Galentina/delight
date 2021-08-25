@@ -271,11 +271,11 @@
 			<div id="loginPane" class="tab_pane show">
 				<form action="" method="">
 					<fieldset>
-						<label for="signInEmail">E-mail</label>
+						<label for="signInEmail">E-mail</label><span id="emailInputErrorLogin" style="opacity: 0" class="error">*</span>
 						<input name="email" type="email" id="signInEmail" placeholder="E-mail">
 					</fieldset>
 					<fieldset>
-						<label for="signInPassword">Password</label>
+						<label for="signInPassword">Password</label><span id="pasInputErrorLogin" style="opacity: 0" class="error">*</span>
 						<input name="password" type="password" id="signInPassword" placeholder="Password">
 					</fieldset>
 
@@ -285,19 +285,25 @@
 
 			<div id="regPane" class="tab_pane">
 				<form action="" method="">
+
 					<fieldset>
 						<label for="username">Name</label>
+						<span id="nameInputError" style="opacity: 0" class="error">*</span>
 						<input name="name" type="text" id="username" placeholder="username">
 					</fieldset>
+
 					<fieldset>
 						<label for="signUpEmail">E-mail</label>
+						<span id="emailInputError" style="opacity: 0" class="error">*</span>
 						<input name="email" type="email" id="signUpEmail" placeholder="E-mail">
 					</fieldset>
+
 					<fieldset>
 						<label for="signUpPassword">Password</label>
+						<span id="passwordInputError" style="opacity: 0" class="error">*</span>
 						<input name="password" type="password" id="signUpPassword" placeholder="Password">
 					</fieldset>
-
+					<span id="wrongReg" style="opacity: 0" class="error">This email is already registered. Please insert a new one.</span>
 					<input type="submit" class="btn-blue">
 				</form>
 

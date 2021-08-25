@@ -6,6 +6,7 @@ import { login, registration } from '../../forms/register_login';
 import { adminProfile, gadgetLink } from '../../forms/elements';
 import { getProfile } from '../../forms/getProfile';
 import { getToken } from '../../forms/getFromStorage';
+import { cleanStorage } from '../../forms/cleanStorage';
 
 
 const loginBtn = document.getElementById('loginBtn');
@@ -50,6 +51,7 @@ if (logoutBtn) {
         logoutBtn.style.display = 'none';
         if (gadgetLink) gadgetLink.className = 'btn-red hidden';
         if (adminProfile) adminProfile.className = 'profile hidden';
+        cleanStorage();
     };
 }
 
@@ -83,26 +85,27 @@ if (getToken()) {
 }
 
 const registerForm = <HTMLFormElement>regPane?.querySelector('form');
-registerForm.onsubmit = (event) => {
+registerForm.onsubmit = async (event) => {
     event.preventDefault();
     const submitEvent = event as unknown as ISubmitEvent;
     const formData = new FormData(submitEvent.target);
-    registration(formData);
-    closePopUp();
+    const data = await registration(formData);
+    if (data) closePopUp();
 };
 
 const loginInForm = <HTMLFormElement>loginPane?.querySelector('form');
-loginInForm.onsubmit = (event) => {
+loginInForm.onsubmit = async (event) => {
     event.preventDefault();
     const submitEvent = event as unknown as ISubmitEvent;
     const formData = new FormData(submitEvent.target);
-    login(formData);
-
+    await login(formData);
     closePopUp();
 
     if (gadgetLink) gadgetLink.className = 'btn-red';
     if (adminProfile) adminProfile.className = 'profile';
     loginBtn.style.display = 'none';
-    if (logoutBtn) { logoutBtn.style.display = 'inherit'; }
+    if (logoutBtn) {
+        logoutBtn.style.display = 'inherit';
+    }
 };
 
